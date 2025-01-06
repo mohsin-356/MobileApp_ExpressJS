@@ -260,3 +260,13 @@
  Execution time for query: 38 milliseconds 
 
  Execution time for query: 17 milliseconds 
+
+ Execution time for query: 38 milliseconds 
+
+ Execution time for query: 3 milliseconds 
+
+ Execution time for query: 6 milliseconds 
+
+ Execution time for query: 6 milliseconds 
+
+ Execution time for query: 16 milliseconds 
