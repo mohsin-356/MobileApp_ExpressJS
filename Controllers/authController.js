@@ -36,6 +36,7 @@ exports.createTokenResponse = createTokenResponse;
 // app.post("/api/v1/users/signup",signUp);
 //POST => '/api/v1/users/signup'
 exports.signUp = asyncErrorHandler(async (req, res, next) => {
+  console.log(req.body);
   //OLD-WAY-BUT-100%-CORRECT-WAY
   // const newUser=new User(req.body);
   // const user=await newUser.save();
@@ -49,6 +50,9 @@ exports.signUp = asyncErrorHandler(async (req, res, next) => {
   // const user=await User.create({name,email,password});
   // const user=await User.create(req.body);
   // sendTokenResponse(user,201,res);
+  if (req.file) {
+    req.body.picture = req.file.path; // Save the image path
+  }
   const newUser = await User.create(req.body);
   //creating a logic for json web tokens
   // const token=jwt.sign({id:newUser._id},process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRES_IN});
